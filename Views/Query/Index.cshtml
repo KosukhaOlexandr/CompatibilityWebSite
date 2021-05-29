@@ -1,0 +1,154 @@
+@model Query
+
+@{
+    ViewData["Title"] = "Запити";
+}
+
+<h1>Запити</h1>
+<hr />
+
+<p>
+    <b>Запит 1</b>
+</p>
+<p>
+    Знайти всі діючі речовини, які використовуються для лікування хвороби d1
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Query1">
+            <input type="hidden" asp-for="Quantity" value="1" />
+            <div class="form-group">
+                <label class="control-label"> Назва хвороби d1 </label>
+                <select asp-for="DeseaseId" asp-items="@ViewBag.DeseaseIds" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Виконати" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+<p>
+    <b>Запит 2</b>
+</p>
+<p>
+    Знайти всі хвороби, для яких використовується as1
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Query2">
+            <input type="hidden" asp-for="Quantity" value="1" />
+            <div class="form-group">
+                <label class="control-label"> Назва діючої речовини as1 </label>
+                <select asp-for="ActiveSubstanceId" asp-items="@ViewBag.ActiveSubstanceIds" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Виконати" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+<p>
+    <b>Запит 3</b>
+</p>
+<p>
+    Знайти всі лікарські засоби, в яких діючою речовиною є as1
+</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Query3">
+            <input type="hidden" asp-for="Quantity" value="1" />
+            <div class="form-group">
+                <label class="control-label"> Назва діючої речовини as1 </label>
+                <select asp-for="ActiveSubstanceId" asp-items="@ViewBag.ActiveSubstanceIds" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Виконати" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+<p>
+    <b>Запит 4</b>
+</p>
+<p>
+    Знайти всі діючі речовини з статусом взаємодії s1 з >= n інших речовин
+</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Query4">
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span class="text-danger">@ViewBag.QuantityError</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label"> Назва статусу взаємодії </label>
+                <select asp-for="CompatibilityStatusId" asp-items="@ViewBag.CompatibilityStatusIds" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Виконати" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+<p>
+    <b>Запит 5</b>
+</p>
+<p>
+    Знайти всі ліки, в яких в складі >= n діючих речовин
+</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Query5">
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span class="text-danger">@ViewBag.QuantityError</span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Виконати" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+
+<p>
+    <b>Запит 6</b>
+</p>
+<p>
+    Знайти хвороби, які мають усі ті ж самі ліки, що і хвороба X1
+</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Query6">
+            <input type="hidden" asp-for="Quantity" value="1" />
+            <div class="form-group">
+                <label class="control-label"> Назва хвороби d1 </label>
+                <select asp-for="DeseaseId" asp-items="@ViewBag.DeseaseIds" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Виконати" />
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
