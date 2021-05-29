@@ -1,0 +1,55 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+
+<form method="get" asp-controller="ActiveSubstances" asp-action="Index">
+    <p align="center">
+        <input type="submit" style="width:200px" value="Діючі речовини" />
+    </p>
+</form>
+
+<form method="get" asp-controller="Compatibilities" asp-action="Index">
+    <p align="center">
+        <input type="submit" style="width:200px" value="Сумісності" />
+    </p>
+</form>
+
+<form method="get" asp-controller="CompatibilityStatus" asp-action="Index">
+    <p align="center">
+        <input type="submit" style="width:200px" value="Статуси сумісності" />
+    </p>
+</form>
+
+<form method="get" asp-controller="Deseases" asp-action="Index">
+    <p align="center">
+        <input type="submit" style="width:200px" value="Хвороби" />
+    </p>
+</form>
+
+<form method="get" asp-controller="DeseasesActiveSubstances" asp-action="Index">
+    <p align="center">
+        <input type="submit" style="width:200px" value="Хвороби та діючі речовини для їх лікуваня" />
+    </p>
+</form>
+
+<form method="get" asp-controller="Medicines" asp-action="Index">
+    <p align="center">
+        <input type="submit" style="width:200px" value="Лікарські засоби" />
+    </p>
+</form>
+
+<form method="get" asp-controller="MedicineActiveSubstances" asp-action="Index">
+    <p align="center">
+        <input type="submit" style="width:200px" value="Лікарські засоби та їх діючі речовини" />
+    </p>
+</form>
+
+<form method="get" asp-controller="Query" asp-action="Index">
+    <p align="center">
+        <input type="submit" style="width:200px" value="Запити" />
+    </p>
+</form>
