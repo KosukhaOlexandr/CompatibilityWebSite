@@ -1,0 +1,165 @@
+﻿@model Query
+
+@{
+    ViewData["Title"] = "Результат";
+}
+
+<h1>Результат</h1>
+<hr />
+
+@if (string.IsNullOrEmpty(Model.ErrorName))
+{
+    @if (Model.QueryName.Equals("Q1"))
+    {
+        <p>
+            <b>Всі діючі засоби з лікування хвороби з Id = @Model.DeseaseId</b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Назва
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.ActiveSubstanceNames.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Model.ActiveSubstanceNames[i]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    @if (Model.QueryName.Equals("Q2"))
+    {
+        <p>
+            <b>Всі хвороби, для яких використовується діюча речовина as1 = @Model.ActiveSubstanceId</b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Назва
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.DeseaseNames.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Model.DeseaseNames[i]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    @if (Model.QueryName.Equals("Q3"))
+    {
+        <p>
+            <b>Всі лікарські засоби, в яких діючою речовиною є as1 = @Model.ActiveSubstanceId</b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Назва
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.MedicineNames.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Model.MedicineNames[i]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    @if (Model.QueryName.Equals("Q4"))
+    {
+        <p>
+            <b>Всі діючі речовини з статусом взаємодії s1 з >= @Model.Quantity інших речовин</b>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Назва
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.ActiveSubstanceNames.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Model.ActiveSubstanceNames[i]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    @if (Model.QueryName.Equals("Q5"))
+    {
+        <p>
+            <b>Всі ліки, в яких в складі >= @Model.Quantity діючих речовин</b>
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Назва
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.MedicineNames.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Model.MedicineNames[i]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+    @if (Model.QueryName.Equals("Q6"))
+    {
+        <p>
+            <b>Знайти хвороби, які мають усі ті ж самі ліки, що і хвороба з Id = @Model.DeseaseId</b>
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        Назва
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.DeseaseNames.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @Model.DeseaseNames[i]
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+}
