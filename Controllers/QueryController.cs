@@ -11,7 +11,7 @@ namespace CompatibilityWebSite.Controllers
 {
     public class QueryController : Controller
     {
-        private const string CONNECTION = "Server= DESKTOP-TKKMN11;Database=CompatibilityWebSite;Trusted_Connection=True;MultipleActiveResultSets=true";
+        private const string CONNECTION = "Server= ;Database=CompatibilityWebSite;Trusted_Connection=True;MultipleActiveResultSets=true";
 
         private const string Q1_PATH = @"C:\Crth\CompatibilityWebSite\Queries\Q1.sql";
         private const string Q2_PATH = @"C:\Crth\CompatibilityWebSite\Queries\Q2.sql"; 
